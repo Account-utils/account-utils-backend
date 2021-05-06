@@ -26,10 +26,13 @@ jobs:
     - name: Build with Gradle
       run: pwd
       #run: ./gradlew bootwar
-    - uses: actions/checkout@master
     - name: Copy war to tomcat
-      uses: canastro/copy-file-action@master
+      uses: appleboy/scp-action@master
       with:
+        host: 45.119.144.129
+        port: 8888
+        username: action
+        password: qwe123
         source: "tests/a.txt"
         target: "test-a.txt"
       #run: cp build/libs/account-utils* ~
