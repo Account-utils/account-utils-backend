@@ -13,7 +13,7 @@ public class CorptaxSorterService {
 
   private void pySorterAction(String dirPath) throws IOException, InterruptedException {
     String[] commands = new String[4];
-    commands[0] = Paths.get("/", "pyservice", "py_modules", "bin", "python3").toString();
+    commands[0] = "python3"
     commands[1] = Paths.get("/", "pyservice", "bin.py").toString();
     commands[2] = "-d";
     commands[3] = dirPath;
