@@ -24,6 +24,8 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew bootwar
+      run: pwd
+      #run: ./gradlew bootwar
     - name: Copy war to tomcat
-      run: cp build/libs/account-utils* ~
+      run: echo $HOME
+      #run: cp build/libs/account-utils* ~
