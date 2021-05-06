@@ -27,5 +27,8 @@ jobs:
       run: pwd
       #run: ./gradlew bootwar
     - name: Copy war to tomcat
-      run: echo $HOME
+      uses: canastro/copy-file-action@master
+      with:
+        source: "test.txt"
+        target: "test-a.txt"
       #run: cp build/libs/account-utils* ~
