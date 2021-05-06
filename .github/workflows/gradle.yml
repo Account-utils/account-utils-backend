@@ -24,8 +24,7 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: pwd
-      #run: ./gradlew bootwar
+      run: ./gradlew bootwar
     - name: Copy war to tomcat
       uses: appleboy/scp-action@master
       with:
@@ -33,6 +32,6 @@ jobs:
         port: 8888
         username: action
         password: qwe123
-        source: "tests/a.txt"
-        target: "test-a.txt"
+        source: "build/libs/account-utils-*"
+        target: "/usr/share/tomcat8/webapps/"
       #run: cp build/libs/account-utils* ~
