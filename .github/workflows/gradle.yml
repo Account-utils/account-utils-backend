@@ -32,6 +32,6 @@ jobs:
         port: 8888
         username: action
         password: qwe123
-        source: "build/libs/account-utils-*"
-        target: "/usr/share/tomcat8/webapps/"
+        source: "build/libs/account-utils-0.0.1-SNAPSHOT.war"
+        target: "/usr/share/tomcat8/webapps"
       #run: cp build/libs/account-utils* ~
