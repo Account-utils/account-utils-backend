@@ -26,7 +26,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew bootwar
     - name: Copy war to root
-      run: cp build/libs/account-utils-* TEST_ROOT
+      run: cp build/libs/account-utils-* TEST_ROOT.war
     - name: Copy war to tomcat
       uses: DevMk2/scp-action@master
       with:
@@ -34,6 +34,6 @@ jobs:
         port: 8888
         username: action
         password: qwe123
-        source: "TEST_ROOT"
+        source: "TEST_ROOT.war"
         target: "/usr/share/tomcat8/webapps"
       #run: cp build/libs/account-utils* ~
