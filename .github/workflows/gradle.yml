@@ -26,4 +26,4 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew bootwar
     - name: Copy war to tomcat
-      run: cp build/libs/account-utils* /usr/share/tomcat8/webapps/test
+      run: cp build/libs/account-utils* ~
