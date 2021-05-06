@@ -26,6 +26,7 @@ jobs:
     - name: Build with Gradle
       run: pwd
       #run: ./gradlew bootwar
+    - uses: actions/checkout@master
     - name: Copy war to tomcat
       uses: canastro/copy-file-action@master
       with:
