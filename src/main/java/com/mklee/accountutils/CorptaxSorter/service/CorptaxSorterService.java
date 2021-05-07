@@ -1,9 +1,9 @@
 package com.mklee.accountutils.CorptaxSorter.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.nio.file.Paths;
 
 @Service
 public class CorptaxSorterService {
@@ -11,10 +11,16 @@ public class CorptaxSorterService {
       pySorterAction(dirPath);
   }
 
+  @Value("${pyaction.command}")
+  String pyCommand;
+
+  @Value("${pyaction.actor}")
+  String pyActor;
+
   private void pySorterAction(String dirPath) throws IOException, InterruptedException {
     String[] commands = new String[4];
-    commands[0] = "python3";
-    commands[1] = Paths.get("/", "pyservice", "bin.py").toString();
+    commands[0] = pyCommand;
+    commands[1] = pyActor;
     commands[2] = "-d";
     commands[3] = dirPath;
 

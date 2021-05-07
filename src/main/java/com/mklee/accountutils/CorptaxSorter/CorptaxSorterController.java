@@ -3,7 +3,6 @@ package com.mklee.accountutils.CorptaxSorter;
 import com.mklee.accountutils.CorptaxSorter.service.CorptaxPdfFileService;
 import com.mklee.accountutils.CorptaxSorter.service.CorptaxSorterService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

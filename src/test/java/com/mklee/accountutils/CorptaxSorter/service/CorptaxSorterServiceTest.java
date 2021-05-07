@@ -19,6 +19,8 @@ class CorptaxSorterServiceTest {
     }
 
     CorptaxSorterService corptaxSorterService = new CorptaxSorterService();
+    corptaxSorterService.pyCommand = "pyservice/py_modules/bin/python3";
+    corptaxSorterService.pyActor = "pyservice/bin.py";
     corptaxSorterService.sorterAction(dirpath, pdfpath);
 
     assertThat(new File(pdfpath).exists()).isTrue();
