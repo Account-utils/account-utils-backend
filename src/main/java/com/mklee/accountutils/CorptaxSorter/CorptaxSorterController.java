@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 @Validated
 @RestController
@@ -66,6 +68,11 @@ public class CorptaxSorterController {
     }
 
     return simpleDto;
+  }
+
+  @GetMapping("/list")
+  public List<String> getCorptaxPdfList() {
+    return pdfFileService.pdfFileList();
   }
 
   @GetMapping("/check")

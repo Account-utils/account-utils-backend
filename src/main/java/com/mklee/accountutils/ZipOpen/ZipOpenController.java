@@ -2,6 +2,8 @@ package com.mklee.accountutils.ZipOpen;
 
 import org.apache.tomcat.util.http.fileupload.FileUploadException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,11 +16,14 @@ public class ZipOpenController {
   ZipOpenService zipService;
 
   @PostMapping
-  public void openZipFile(@RequestParam("file") MultipartFile file) throws Throwable {
+  public ResponseEntity openZipFile(@RequestParam("file") MultipartFile file) throws Throwable {
     System.out.println(file.getOriginalFilename());
     System.out.println(file.getName());
     System.out.println(file.getSize());
-    // TODO zip 아니면 쳐내기
-    zipService.unzip(file);
+    if(file.getOriginalFilename().contains(".zip")) {
+      zipService.unzip(file);
+      return new ResponseEntity<>(HttpStatus.OK);
+    }
+    return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
   }
 }
